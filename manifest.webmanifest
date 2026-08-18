@@ -1,0 +1,12 @@
+{
+  "name": "Rawson 2026 - Encuesta Territorial",
+  "short_name": "Rawson 2026",
+  "id": "rawson2026",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3f6f4",
+  "theme_color": "#16675a",
+  "lang": "es-AR"
+}

@@ -1,0 +1,1187 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#16675a" />
+    <meta name="description" content="App movil offline para encuestas territoriales Rawson 2026." />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Rawson 2026" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="msapplication-TileColor" content="#16675a" />
+    <title>Rawson 2026 - Encuesta Territorial</title>
+    <link rel="icon" href="data:image/png;base64,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" sizes="192x192" />
+    <link rel="apple-touch-icon" href="data:image/png;base64,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" />
+    <style>
+:root {
+  color-scheme: light;
+  --ink: #15201d;
+  --muted: #66726d;
+  --line: #d9e2df;
+  --panel: #ffffff;
+  --bg: #f3f6f4;
+  --brand: #16675a;
+  --brand-strong: #0f4e44;
+  --accent: #bd4f31;
+  --warn: #946516;
+  --shadow: 0 14px 30px rgba(26, 45, 39, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(22, 103, 90, 0.07) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(22, 103, 90, 0.05) 1px, transparent 1px),
+    var(--bg);
+  background-size: 28px 28px;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.4;
+}
+
+.app-header {
+  align-items: center;
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: max(18px, env(safe-area-inset-top)) 18px 18px;
+}
+
+.eyebrow,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  opacity: 0.78;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.45rem;
+  font-weight: 760;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.status-pill {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  padding: 7px 10px;
+}
+
+.shell {
+  margin: 0 auto;
+  max-width: 920px;
+  padding: 16px 14px 100px;
+}
+
+.panel,
+.form-section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.summary {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 14px;
+  padding: 14px;
+}
+
+.metric {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 780;
+}
+
+.metric-label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.76rem;
+}
+
+.tabs {
+  background: #e7eeeb;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 14px;
+  padding: 4px;
+}
+
+.tab {
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: var(--muted);
+  font-weight: 700;
+  min-height: 38px;
+  padding: 8px;
+}
+
+.tab.is-active {
+  background: #fff;
+  color: var(--brand);
+  box-shadow: 0 4px 12px rgba(25, 45, 38, 0.08);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+.form-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.form-section {
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+label,
+fieldset {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 12px;
+}
+
+label,
+legend {
+  color: #31413d;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  appearance: none;
+  background: #fbfcfb;
+  border: 1px solid #cdd8d4;
+  border-radius: 7px;
+  color: var(--ink);
+  font: inherit;
+  min-height: 44px;
+  padding: 10px 11px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(22, 103, 90, 0.14);
+  outline: 0;
+}
+
+.rating {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.rating label {
+  margin: 0;
+}
+
+.rating input {
+  inline-size: 1px;
+  opacity: 0;
+  position: absolute;
+}
+
+.rating span {
+  align-items: center;
+  background: #f4f7f5;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 760;
+  justify-content: center;
+  min-height: 48px;
+  text-align: center;
+}
+
+.rating input:checked + span {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sticky-actions {
+  background: rgba(243, 246, 244, 0.94);
+  bottom: 0;
+  margin: 0 -14px;
+  padding: 12px 14px max(12px, env(safe-area-inset-bottom));
+  position: sticky;
+}
+
+button {
+  background: var(--brand);
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 760;
+  min-height: 44px;
+  padding: 10px 14px;
+}
+
+button.secondary {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--brand);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.records-list,
+.analysis-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.record,
+.analysis-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.record-title {
+  display: flex;
+  font-weight: 780;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.record-meta,
+.empty {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.badge {
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+}
+
+.badge.pending {
+  background: var(--warn);
+}
+
+.badge.synced {
+  background: var(--brand);
+}
+
+.bar {
+  background: #edf2f0;
+  border-radius: 999px;
+  height: 10px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.bar > span {
+  background: var(--accent);
+  display: block;
+  height: 100%;
+}
+
+/* Ajustes de interacción para iPhone/iPad */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grid.two,
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+</style>
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Diagnostico territorial</p>
+        <h1>Rawson 2026</h1>
+      </div>
+      <div class="status-pill" id="syncStatus">Sin sincronizar</div>
+    </header>
+
+    <main class="shell">
+      <section class="panel summary">
+        <div>
+          <span class="metric" id="totalCount">0</span>
+          <span class="metric-label">encuestas</span>
+        </div>
+        <div>
+          <span class="metric" id="pendingCount">0</span>
+          <span class="metric-label">pendientes</span>
+        </div>
+        <div>
+          <span class="metric" id="avgNational">-</span>
+          <span class="metric-label">prom. nacional</span>
+        </div>
+      </section>
+
+      <nav class="tabs" aria-label="Secciones">
+        <button class="tab is-active" data-tab="survey">Encuesta</button>
+        <button class="tab" data-tab="records">Registros</button>
+        <button class="tab" data-tab="analysis">Analisis</button>
+        <button class="tab" data-tab="settings">Ajustes</button>
+      </nav>
+
+      <section class="tab-panel is-active" id="survey">
+        <form id="surveyForm" class="form-stack">
+          <section class="form-section">
+            <h2>Identificacion</h2>
+            <div class="grid two">
+              <label>Fecha
+                <input name="fecha" type="date" required />
+              </label>
+              <label>Casa / Barrio
+                <input name="casa" type="text" autocomplete="address-level3"/>
+				  <select name='barrio' required>
+					  <option value='B. Capitán Lazo'>B. Capitán Lazo</option>
+<option value='V. Hipódromo'>V. Hipódromo</option>
+<option value='V. Cenobio Bustos'>V. Cenobio Bustos</option>
+<option value='B. Belgrano'>B. Belgrano</option>
+<option value='B. Güemes'>B. Güemes</option>
+<option value='B. Hualilán'>B. Hualilán</option>
+<option value='B. Hualilán Sur Montaño'>B. Hualilán Sur Montaño</option>
+<option value='V. Don Pablo'>V. Don Pablo</option>
+<option value='B. Ceramistas I'>B. Ceramistas I</option>
+<option value='V. San Miguel'>V. San Miguel</option>
+<option value='B. Conjunto 11'>B. Conjunto 11</option>
+<option value='B. Dr. Guillermo Rawson'>B. Dr. Guillermo Rawson</option>
+<option value='V. La Superiora'>V. La Superiora</option>
+<option value='V. Esther'>V. Esther</option>
+<option value='V. Guzmán'>V. Guzmán</option>
+<option value='V. Buron Alonso'>V. Buron Alonso</option>
+<option value='B. Amespu'>B. Amespu</option>
+<option value='B. La Superiora (Sector)'>B. La Superiora (Sector)</option>
+<option value='B. UTA'>B. UTA</option>
+<option value='B. 2 de Abril'>B. 2 de Abril</option>
+<option value='B. Juana Manso'>B. Juana Manso</option>
+<option value='B. 11 de Noviembre'>B. 11 de Noviembre</option>
+<option value='V. Angélica'>V. Angélica</option>
+<option value='B. Sutiagif'>B. Sutiagif</option>
+<option value='B. Soeva'>B. Soeva</option>
+<option value='B. Valle Grande'>B. Valle Grande</option>
+<option value='B. Conjunto 8'>B. Conjunto 8</option>
+<option value='Villa Krause'>Villa Krause</option>
+<option value='B. La Estación'>B. La Estación</option>
+<option value='V. San Damián'>V. San Damián</option>
+<option value='B. Buenaventura Luna'>B. Buenaventura Luna</option>
+<option value='B. Patagonia II'>B. Patagonia II</option>
+<option value='V. Rodríguez Vila'>V. Rodríguez Vila</option>
+<option value='B. Conjunto 10'>B. Conjunto 10</option>
+<option value='B. 12 de Diciembre'>B. 12 de Diciembre</option>
+<option value='B. San Expedito'>B. San Expedito</option>
+<option value='B. Río Blanco'>B. Río Blanco</option>
+<option value='B. Los Caracoles'>B. Los Caracoles</option>
+<option value='B. Franklin Rawson'>B. Franklin Rawson</option>
+<option value='B. Malimán'>B. Malimán</option>
+<option value='B. Serranías del Sur'>B. Serranías del Sur</option>
+<option value='B. La Quebrada'>B. La Quebrada</option>
+<option value='B. Obrero Rawson'>B. Obrero Rawson</option>
+<option value='V. San Ricardo'>V. San Ricardo</option>
+<option value='V. Lerga'>V. Lerga</option>
+<option value='V. Sarmiento'>V. Sarmiento</option>
+<option value='V. Rojas'>V. Rojas</option>
+<option value='B. Neuquén'>B. Neuquén</option>
+<option value='B. Mendoza'>B. Mendoza</option>
+<option value='V. Mascarell'>V. Mascarell</option>
+<option value='V. 12 de Octubre'>V. 12 de Octubre</option>
+<option value='B. Empresa Mayo'>B. Empresa Mayo</option>
+<option value='B. Domingo Sarmiento'>B. Domingo Sarmiento</option>
+<option value='V. Franca'>V. Franca</option>
+<option value='V. General Acha'>V. General Acha</option>
+<option value='V. Los Paraísos'>V. Los Paraísos</option>
+<option value='V. Rodano'>V. Rodano</option>
+<option value='V. Fleury'>V. Fleury</option>
+<option value='V. Nueva Esperanza'>V. Nueva Esperanza</option>
+<option value='V. Santo Domingo'>V. Santo Domingo</option>
+<option value='B. Amecon'>B. Amecon</option>
+<option value='V. Barón'>V. Barón</option>
+<option value='V. José Dolores'>V. José Dolores</option>
+<option value='B. Edilco'>B. Edilco</option>
+<option value='V. Echegaray'>V. Echegaray</option>
+<option value='B. Parque Sur'>B. Parque Sur</option>
+<option value='B. CGT Rawson'>B. CGT Rawson</option>
+<option value='B. Teniente Silva'>B. Teniente Silva</option>
+<option value='B. Procesa Sarmiento'>B. Procesa Sarmiento</option>
+<option value='B. Los Horneros'>B. Los Horneros</option>
+<option value='B. José Miguel Escobar'>B. José Miguel Escobar</option>
+<option value='B. Reina Mora'>B. Reina Mora</option>
+<option value='B. Bubica'>B. Bubica</option>
+<option value='B. Stotac'>B. Stotac</option>
+<option value='B. Fonzolato'>B. Fonzolato</option>
+<option value='B. Walt Disney'>B. Walt Disney</option>
+<option value='B. Unión Obrera Textil'>B. Unión Obrera Textil</option>
+<option value='B. Sierra Morada'>B. Sierra Morada</option>
+<option value='Medanito'>Medanito</option>
+<option value='V. Estornell'>V. Estornell</option>
+<option value='V. Calandra'>V. Calandra</option>
+<option value='V. Italia'>V. Italia</option>
+<option value='B. San Luis'>B. San Luis</option>
+<option value='V. Congreso'>V. Congreso</option>
+<option value='V. Las Rosas'>V. Las Rosas</option>
+<option value='B. Salvador María del Carril '>B. Salvador María del Carril </option>
+<option value='B. Marco'>B. Marco</option>
+<option value='V. Lliber'>V. Lliber</option>
+<option value='V. San Pedro'>V. San Pedro</option>
+<option value='V. Los Huarpes'>V. Los Huarpes</option>
+<option value='B. Los Manantiales'>B. Los Manantiales</option>
+<option value='B. Gata de Gorgos'>B. Gata de Gorgos</option>
+<option value='B. Estado de Israel'>B. Estado de Israel</option>
+<option value='B. Atlético'>B. Atlético</option>
+<option value='V. María'>V. María</option>
+<option value='V. Rachel'>V. Rachel</option>
+<option value='Médano de Oro (Distrito / Localidad)'>Médano de Oro (Distrito / Localidad)</option>
+<option value='V. Cristo Pobre'>V. Cristo Pobre</option>
+<option value='Colonia Rodas'>Colonia Rodas</option>
+<option value='Colonia Sarmiento'>Colonia Sarmiento</option>
+<option value='Barrio Médano de Oro'>Barrio Médano de Oro</option>
+
+				  </select>
+              </label>
+            </div>
+            <label>Nombre del vecino
+              <input name="nombre" type="text" autocomplete="name" />
+            </label>
+            <div class="grid two">
+              <label>Rango de edad
+                <select name="edad" required>
+                  <option value="">Seleccionar</option>
+                  <option>16-25</option>
+                  <option>26-35</option>
+                  <option>36-45</option>
+                  <option>46-55</option>
+                  <option>56-65</option>
+                  <option>+66</option>
+                </select>
+              </label>
+              <label>Telefono opcional
+                <input name="telefono" type="tel" autocomplete="tel" />
+              </label>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h2>Bloque 1</h2>
+            <label>1. Principal problema del barrio
+              <select name="problema" required>
+                <option value="">Seleccionar</option>
+                <option>Seguridad</option>
+                <option>Infraestructura (luz/baches)</option>
+                <option>Cloacas / agua</option>
+                <option>Limpieza</option>
+                <option>Transporte</option>
+                <option>Salud / educacion</option>
+                <option>Trabajo / economia</option>
+                <option>Drogas</option>
+                <option>Otro</option>
+              </select>
+            </label>
+            <label>Detalle si eligio otro
+              <input name="problemaOtro" type="text" />
+            </label>
+            <label>2. Respuesta municipal ante ese problema
+              <select name="respuestaMunicipal" required>
+                <option value="">Seleccionar</option>
+                <option>Inexistente</option>
+                <option>Mala</option>
+                <option>Regular</option>
+                <option>Buena</option>
+                <option>Muy eficiente</option>
+              </select>
+            </label>
+            <label>3. Lo que mas valora del barrio
+              <select name="valorBarrio" required>
+                <option value="">Seleccionar</option>
+                <option>Comunidad / vecinos</option>
+                <option>Paz / tranquilidad</option>
+                <option>Ubicacion</option>
+                <option>Servicios</option>
+                <option>Espacios verdes</option>
+                <option>Identidad</option>
+                <option>Nada</option>
+                <option>Otro</option>
+              </select>
+            </label>
+          </section>
+
+          <section class="form-section">
+            <h2>Bloque 2</h2>
+            <fieldset>
+              <legend>4. Gestion municipal: Intendente Carlos Munisaga</legend>
+              <div class="rating" data-name="gestionMunicipal"></div>
+            </fieldset>
+            <fieldset>
+              <legend>5. Gestion provincial: Gobernador Marcelo Orrego</legend>
+              <div class="rating" data-name="gestionProvincial"></div>
+            </fieldset>
+            <fieldset>
+              <legend>6. Gestion nacional: Presidente Javier Milei</legend>
+              <div class="rating" data-name="gestionNacional"></div>
+            </fieldset>
+            <label>7. Espacio politico con el que se siente mas identificado
+              <select name="espacioPolitico" required>
+                <option value="">Seleccionar</option>
+                <option>LLA</option>
+                <option>Pro</option>
+                <option>Fuerza San Juan</option>
+                <option>Frente izquierda</option>
+                <option>Hacemos</option>
+                <option>Otro</option>
+              </select>
+            </label>
+          </section>
+
+          <section class="form-section">
+            <h2>Bloque 3</h2>
+            <label>8. Participa en alguna organizacion
+              <select name="participaOrganizacion" required>
+                <option value="">Seleccionar</option>
+                <option>No</option>
+                <option>Vecinal</option>
+                <option>Religiosa</option>
+                <option>Deportiva</option>
+                <option>Politica</option>
+                <option>Social</option>
+                <option>Otra</option>
+              </select>
+            </label>
+            <label>9. Si hubiera una reunion, asistiria
+              <select name="asistenciaReunion" required>
+                <option value="">Seleccionar</option>
+                <option>No</option>
+                <option>Solo recibir info</option>
+                <option>Participacion ocasional</option>
+                <option>Participacion activa</option>
+              </select>
+            </label>
+            <label>10. Referente de la zona
+              <input name="referente" type="text" />
+            </label>
+            <label>Tipo de referente
+              <select name="tipoReferente">
+                <option value="">Seleccionar</option>
+                <option>Vecinal</option>
+                <option>Politico</option>
+                <option>Religioso</option>
+                <option>Comerciante</option>
+                <option>Otro</option>
+              </select>
+            </label>
+            <label>11. WhatsApp vecinal activo
+              <select name="whatsappVecinal" required>
+                <option value="">Seleccionar</option>
+                <option>No</option>
+                <option>Si</option>
+              </select>
+            </label>
+            <label>Referente / administrador del WhatsApp
+              <input name="whatsappAdmin" type="text" />
+            </label>
+          </section>
+
+          <section class="form-section">
+            <h2>Sintesis del relevador</h2>
+            <label>Perfil estrategico
+              <select name="perfilEstrategico" required>
+                <option value="">Calcular automaticamente</option>
+                <option>Perfil A - Movilizacion alta</option>
+                <option>Perfil B - Simpatizante</option>
+                <option>Perfil C - Persuadible</option>
+                <option>Perfil D - No alineado</option>
+              </select>
+            </label>
+            <label>Observaciones del encuestador
+              <textarea name="observaciones" rows="4"></textarea>
+            </label>
+          </section>
+
+          <div class="actions sticky-actions">
+            <button type="reset" class="secondary">Limpiar</button>
+            <button type="submit">Guardar encuesta</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="tab-panel" id="records">
+        <div class="actions">
+          <button id="exportXls">Exportar Excel</button>
+          <button id="exportCsv" class="secondary">Exportar CSV</button>
+          <button id="syncNow" class="secondary">Sincronizar</button>
+        </div>
+        <div id="recordsList" class="records-list"></div>
+      </section>
+
+      <section class="tab-panel" id="analysis">
+        <div id="analysisView" class="analysis-grid"></div>
+      </section>
+
+      <section class="tab-panel" id="settings">
+        <form id="settingsForm" class="form-stack">
+          <section class="form-section">
+            <h2>Destino</h2>
+            <label>Correo que recibira el archivo
+              <input name="recipientEmail" type="email" placeholder="nombre@dominio.com" />
+            </label>
+          </section>
+          <section class="form-section">
+            <h2>Encuestador</h2>
+            <label>Nombre del encuestador
+              <input name="interviewerName" type="text" />
+            </label>
+          </section>
+          <div class="actions">
+            <button type="submit">Guardar ajustes</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <template id="emptyState">
+      <div class="empty">Todavia no hay encuestas guardadas.</div>
+    </template>
+
+    <script>
+const STORAGE_KEY = "rawson2026.records";
+const SETTINGS_KEY = "rawson2026.settings";
+const DEVICE_KEY = "rawson2026.device";
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx0o7QTl8ybV1h4U8wPmwSDXvleLnJaIZYv2JatiKWgUSg9YjyS2uaFQVj35YZbcfpB/exec";
+
+const fields = [
+  "id", "createdAt", "syncStatus", "interviewerName", "deviceId", "fecha", "casa", "barrio", "nombre", "edad", "telefono",
+  "problema", "problemaOtro", "respuestaMunicipal", "valorBarrio", "gestionMunicipal",
+  "gestionProvincial", "gestionNacional", "espacioPolitico", "participaOrganizacion",
+  "asistenciaReunion", "referente", "tipoReferente", "whatsappVecinal", "whatsappAdmin",
+  "perfilEstrategico", "observaciones"
+];
+
+const ratingLabels = ["Muy mala", "Mala", "Regular", "Buena", "Muy buena"];
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+let records = load(STORAGE_KEY, []);
+let settings = load(SETTINGS_KEY, {
+  recipientEmail: "",
+  interviewerName: ""
+});
+
+// Compatibilidad con instalaciones anteriores: la URL ya no se guarda en Ajustes.
+if (settings.scriptUrl) {
+  delete settings.scriptUrl;
+  save(SETTINGS_KEY, settings);
+}
+
+const device = getDevice();		
+
+function load(key, fallback) {
+  try {
+    return JSON.parse(localStorage.getItem(key)) ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function save(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+function generateDeviceId() {
+  if (window.crypto?.randomUUID) {
+    return window.crypto.randomUUID();
+  }
+
+  if (window.crypto?.getRandomValues) {
+    const bytes = new Uint8Array(16);
+    window.crypto.getRandomValues(bytes);
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = [...bytes].map((b) => b.toString(16).padStart(2, "0"));
+    return `${hex.slice(0,4).join("")}-${hex.slice(4,6).join("")}-${hex.slice(6,8).join("")}-${hex.slice(8,10).join("")}-${hex.slice(10,16).join("")}`;
+  }
+
+  return `device-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function getDevice() {
+
+  let device = load(DEVICE_KEY, null);
+
+  if (!device) {
+
+    device = {
+      id: generateDeviceId(),
+      createdAt: new Date().toISOString(),
+      userAgent: navigator.userAgent
+    };
+
+    save(DEVICE_KEY, device);
+  }
+
+  return device;
+}
+
+function init() {
+  registerServiceWorker();
+  setupTabs();
+  setupRatings();
+  setupForms();
+  setupActions();
+  hydrateSettings();
+  $("#surveyForm").fecha.valueAsDate = new Date();
+  render();
+}
+
+function setupTabs() {
+  $$(".tab").forEach((button) => {
+    button.addEventListener("click", () => {
+      $$(".tab, .tab-panel").forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+      $(`#${button.dataset.tab}`).classList.add("is-active");
+      render();
+    });
+  });
+}
+
+function setupRatings() {
+  $$(".rating").forEach((group) => {
+    const name = group.dataset.name;
+    group.innerHTML = ratingLabels.map((label, index) => {
+      const value = index + 1;
+      return `<label><input type="radio" name="${name}" value="${value}" required><span>${value}<br>${label}</span></label>`;
+    }).join("");
+  });
+}
+
+function setupForms() {
+
+  $("#surveyForm").addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    if (!settings.interviewerName.trim()) {
+
+      alert(
+        "Antes de realizar una encuesta debe ingresar el nombre del encuestador en Ajustes."
+      );
+
+      activateTab("settings");
+
+      const input = $('#settingsForm [name="interviewerName"]');
+
+      if (input) {
+        input.focus();
+      }
+
+      return;
+    }
+
+    const data = Object.fromEntries(
+      new FormData(event.currentTarget)
+    );
+
+    data.id = crypto.randomUUID();
+    data.createdAt = new Date().toISOString();
+    data.syncStatus = "pending";
+
+    data.interviewerName = settings.interviewerName.trim();
+
+    data.deviceId = device.id;
+
+    data.perfilEstrategico =
+      data.perfilEstrategico || classifyProfile(data);
+
+    records.unshift(data);
+
+    save(STORAGE_KEY, records);
+
+    event.currentTarget.reset();
+
+    event.currentTarget.fecha.valueAsDate = new Date();
+
+    activateTab("records");
+
+    render();
+  });
+
+
+  $("#settingsForm").addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const nuevosAjustes =
+      Object.fromEntries(new FormData(event.currentTarget));
+
+    const nombre = (nuevosAjustes.interviewerName || "").trim();
+
+    if (!nombre) {
+
+      alert(
+        "Debe ingresar el nombre del encuestador para poder utilizar la aplicación."
+      );
+
+      $('#settingsForm [name="interviewerName"]').focus();
+
+      return;
+    }
+
+    nuevosAjustes.interviewerName = nombre;
+
+    settings = nuevosAjustes;
+
+    save(SETTINGS_KEY, settings);
+
+    alert("Configuración guardada correctamente.");
+
+    render();
+  });
+
+}
+
+function setupActions() {
+  $("#exportXls").addEventListener("click", () => downloadExcel());
+  $("#exportCsv").addEventListener("click", () => downloadCsv());
+  $("#syncNow").addEventListener("click", () => syncPending());
+}
+
+function hydrateSettings() {
+  Object.entries(settings).forEach(([key, value]) => {
+    const input = $(`#settingsForm [name="${key}"]`);
+    if (input) input.value = value || "";
+  });
+}
+
+function activateTab(id) {
+  $$(".tab, .tab-panel").forEach((item) => item.classList.remove("is-active"));
+  $(`.tab[data-tab="${id}"]`).classList.add("is-active");
+  $(`#${id}`).classList.add("is-active");
+}
+
+function classifyProfile(data) {
+  const national = Number(data.gestionNacional);
+  const local = Number(data.gestionMunicipal);
+  const active = data.asistenciaReunion === "Participacion activa";
+  const medium = ["Solo recibir info", "Participacion ocasional"].includes(data.asistenciaReunion);
+  if (national >= 4 && active) return "Perfil A - Movilizacion alta";
+  if (national >= 4 && medium) return "Perfil B - Simpatizante";
+  if (local <= 2 && data.asistenciaReunion !== "No") return "Perfil C - Persuadible";
+  if (national <= 2 && data.asistenciaReunion === "No") return "Perfil D - No alineado";
+  return "Sin clasificar";
+}
+
+function render() {
+  renderSummary();
+  renderRecords();
+  renderAnalysis();
+}
+
+function renderSummary() {
+  const pending = records.filter((record) => record.syncStatus !== "synced").length;
+  $("#totalCount").textContent = records.length;
+  $("#pendingCount").textContent = pending;
+  $("#avgNational").textContent = average(records.map((record) => record.gestionNacional)) || "-";
+  $("#syncStatus").textContent = pending ? `${pending} pendientes` : "Sincronizado";
+}
+
+function renderRecords() {
+  const list = $("#recordsList");
+  if (!records.length) {
+    list.innerHTML = $("#emptyState").innerHTML;
+    return;
+  }
+  list.innerHTML = records.map((record) => `
+    <article class="record">
+      <div class="record-title">
+        <span>${escapeHtml(record.barrio || "Sin barrio")}</span>
+        <span class="badge ${record.syncStatus === "synced" ? "synced" : "pending"}">${record.syncStatus === "synced" ? "sincronizada" : "pendiente"}</span>
+      </div>
+      <p class="record-meta">${formatDate(record.fecha)} Â· ${escapeHtml(record.nombre || "Sin nombre")} Â· ${escapeHtml(record.perfilEstrategico || "")}</p>
+      <p>${escapeHtml(record.problema || "")} / gestion nacional ${escapeHtml(record.gestionNacional || "-")}</p>
+    </article>
+  `).join("");
+}
+
+function renderAnalysis() {
+  const analysis = $("#analysisView");
+  if (!records.length) {
+    analysis.innerHTML = $("#emptyState").innerHTML;
+    return;
+  }
+  const cards = [
+    frequencyCard("Problemas principales", "problema"),
+    frequencyCard("Espacio politico", "espacioPolitico"),
+    frequencyCard("Participacion en reunion", "asistenciaReunion"),
+    frequencyCard("Perfiles estrategicos", "perfilEstrategico"),
+    scoreCard("Promedios de gestion")
+  ];
+  analysis.innerHTML = cards.join("");
+}
+
+function frequencyCard(title, key) {
+  const counts = frequency(records.map((record) => record[key] || "Sin dato"));
+  const total = records.length || 1;
+  return `<article class="analysis-card"><h2>${title}</h2>${Object.entries(counts).map(([label, count]) => `
+    <p><strong>${escapeHtml(label)}</strong>: ${count}</p>
+    <div class="bar"><span style="width:${Math.round((count / total) * 100)}%"></span></div>
+  `).join("")}</article>`;
+}
+
+function scoreCard(title) {
+  return `<article class="analysis-card"><h2>${title}</h2>
+    <p>Municipal: <strong>${average(records.map((r) => r.gestionMunicipal)) || "-"}</strong></p>
+    <p>Provincial: <strong>${average(records.map((r) => r.gestionProvincial)) || "-"}</strong></p>
+    <p>Nacional: <strong>${average(records.map((r) => r.gestionNacional)) || "-"}</strong></p>
+  </article>`;
+}
+
+function frequency(values) {
+  return values.reduce((acc, value) => {
+    acc[value] = (acc[value] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+function average(values) {
+  const nums = values.map(Number).filter(Number.isFinite);
+  if (!nums.length) return "";
+  return (nums.reduce((sum, n) => sum + n, 0) / nums.length).toFixed(2);
+}
+
+function downloadCsv() {
+  const csv = toCsv(records);
+  download(`rawson-encuestas-${today()}.csv`, "\uFEFF" + csv, "text/csv;charset=utf-8");
+}
+
+function downloadExcel() {
+  const rows = records.map((record) => fields.map((field) => record[field] || ""));
+  const tableRows = [fields, ...rows].map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("");
+  const summaryRows = [
+    ["Total encuestas", records.length],
+    ["Promedio municipal", average(records.map((r) => r.gestionMunicipal))],
+    ["Promedio provincial", average(records.map((r) => r.gestionProvincial))],
+    ["Promedio nacional", average(records.map((r) => r.gestionNacional))]
+  ].map((row) => `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`).join("");
+  const html = `<!doctype html><html><head><meta charset="utf-8"></head><body>
+    <h1>Rawson 2026 - Encuestas</h1>
+    <h2>Resumen</h2><table border="1">${summaryRows}</table>
+    <h2>Datos</h2><table border="1">${tableRows}</table>
+  </body></html>`;
+  download(`rawson-encuestas-${today()}.xls`, html, "application/vnd.ms-excel;charset=utf-8");
+}
+
+function toCsv(items) {
+  return [fields, ...items.map((item) => fields.map((field) => item[field] || ""))]
+    .map((row) => row.map(csvCell).join(","))
+    .join("\n");
+}
+
+function csvCell(value) {
+  return `"${String(value).replaceAll('"', '""')}"`;
+}
+
+function download(filename, content, type) {
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+async function syncPending() {
+  const pending = records.filter((record) => record.syncStatus !== "synced");
+
+  if (!pending.length) return;
+
+  $("#syncNow").disabled = true;
+
+  try {
+    const payload = JSON.stringify({
+      recipientEmail: settings.recipientEmail,
+      interviewerName: settings.interviewerName,
+      device: {
+        id: device.id,
+        createdAt: device.createdAt,
+        userAgent: device.userAgent
+      },
+      submissions: pending
+    });
+
+    let confirmed = false;
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: payload
+      });
+
+      const result = await response.json();
+      if (!result.ok) throw new Error(result.error || "No se pudo sincronizar");
+      confirmed = true;
+    } catch {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: payload
+      });
+      confirmed = true;
+    }
+
+    if (!confirmed) throw new Error("No se pudo entregar el lote");
+
+    const syncedIds = new Set(pending.map((record) => record.id));
+    records = records.map((record) =>
+      syncedIds.has(record.id) ? { ...record, syncStatus: "synced" } : record
+    );
+
+    save(STORAGE_KEY, records);
+  } catch (error) {
+    alert(`No se pudo sincronizar: ${error.message}`);
+  } finally {
+    $("#syncNow").disabled = false;
+    render();
+  }
+}
+
+function formatDate(value) {
+  if (!value) return "Sin fecha";
+  return new Date(`${value}T00:00:00`).toLocaleDateString("es-AR");
+}
+
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[char]);
+}
+
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+
+  if (location.protocol !== "https:") return;
+
+  window.addEventListener("load", async () => {
+    try {
+      await navigator.serviceWorker.register("./sw.js", { scope: "./" });
+    } catch (error) {
+      console.warn("No se pudo registrar el Service Worker:", error);
+    }
+  });
+}
+
+init();
+
+</script>
+  </body>
+</html>
