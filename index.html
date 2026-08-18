@@ -436,6 +436,7 @@ button {
               <label>Casa / Barrio
                 <input name="casa" type="text" autocomplete="address-level3"/>
 				  <select name='barrio' required>
+					  <option value='Seleccionar Barrio'>Seleccionar Barrio</option>
 					  <option value='B. Capitán Lazo'>B. Capitán Lazo</option>
 <option value='V. Hipódromo'>V. Hipódromo</option>
 <option value='V. Cenobio Bustos'>V. Cenobio Bustos</option>
@@ -684,7 +685,7 @@ button {
           <section class="form-section">
             <h2>Sintesis del relevador</h2>
             <label>Perfil estrategico
-              <select name="perfilEstrategico" required>
+              <select name="perfilEstrategico">
                 <option value="">Calcular automaticamente</option>
                 <option>Perfil A - Movilizacion alta</option>
                 <option>Perfil B - Simpatizante</option>
@@ -722,7 +723,7 @@ button {
           <section class="form-section">
             <h2>Destino</h2>
             <label>Correo que recibira el archivo
-              <input name="recipientEmail" type="email" placeholder="nombre@dominio.com" />
+              <input name="recipientEmail" type="email" disabled placeholder="nombre@dominio.com" />
             </label>
           </section>
           <section class="form-section">
