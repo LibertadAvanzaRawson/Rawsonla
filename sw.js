@@ -1,4 +1,4 @@
-const CACHE_NAME = "rawson2026-v1";
+const CACHE_NAME = "rawson2026-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -35,17 +35,36 @@ self.addEventListener("fetch", (event) => {
   // Las encuestas se sincronizan directamente con Google Apps Script.
   if (url.hostname.includes("script.google.com")) return;
 
-  event.respondWith(
-    caches.match(request).then((cached) => {
-      if (cached) return cached;
+  // El HTML contiene la aplicación y datos que cambian con frecuencia, como
+  // la lista de barrios. Cuando hay conexión siempre buscamos la versión más
+  // reciente y actualizamos la copia offline. Si no hay red, usamos la última
+  // versión guardada.
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(new Request(request, { cache: "no-store" }))
+        .then((response) => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put("./index.html", copy);
+            });
+          }
+          return response;
+        })
+        .catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
 
-      return fetch(request).then((response) => {
+  event.respondWith(
+    fetch(new Request(request, { cache: "no-store" }))
+      .then((response) => {
         if (response.ok && url.origin === self.location.origin) {
           const copy = response.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
         }
         return response;
-      });
-    })
+      })
+      .catch(() => caches.match(request))
   );
 });
